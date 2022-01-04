@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geolocation</title>
+</head>
+<body>
+    <div id="Map" style="width: 1920px; height: 1000px"></div>
+    
+   <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            let mapOptions = {
+                center: new google.maps.LatLng(20.5937,78.9629),
+                zoom: 6,
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            };
+            
+            // latlngbounds make sure the Sets the viewport to contain the given bounds
+
+            let latlngbounds = new google.maps.LatLngBounds();
+            let map = new google.maps.Map(document.getElementById("Map"), mapOptions);
+            google.maps.event.addListener(map, 'click', function (location) {
+                alert("Latitude: " + location.latLng.lat() + "\nLongitude: " + location.latLng.lng());
+            });
+        }
+    </script>
+   
+</body>
+</html>
