@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Without Webworkers</title>
+</head>
+<body>
+    <h1>without Webworkers</h1>
+    <button onclick="simple()">Welcome</button>
+    <button onclick="timeoperation()">Calculate</button>
+
+
+    <script>
+        function simple(){
+            alert('Welcome');
+        }
+
+        function timeoperation(){
+            calculate();
+        }
+        function calculate(){
+            for(var i=0;i<=4000000000;i++)
+            {
+            output=i;
+            if(i%20000000===0){
+                console.log(i+' over');
+            }
+        }
+        alert('Output is '+output);
+        console.log('All is over');
+    }
+    </script>
+</body>
+</html>
